@@ -69,7 +69,11 @@ Bump once per release in `src/HideSecondaryName.toc` and `src/Core.lua`.
 
 The reused CurseForge workflow runs on main pushes that change the TOC and publishes
 only when its version differs from the previous main revision. Initial pushes skip
-publication. It is restricted to `cvandal/hide-secondary-name`; adjust the repository
+publication. For the initial release, push the workflow to main, then choose
+**Actions → Publish to CurseForge → Run workflow → main**. Manual runs publish the
+current version without comparing a previous revision. Confirm that version is not
+already uploaded before using a manual run. Later version bumps publish automatically.
+It is restricted to `cvandal/hide-secondary-name`; adjust the repository
 guard if hosted elsewhere. It tests, packages and saves the ZIP as a workflow artifact.
 
 Before publication, create a separate CurseForge project and set repository secrets:

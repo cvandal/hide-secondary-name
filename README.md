@@ -1,11 +1,20 @@
 # Hide Secondary Name
 
+<p align="center">
+  <img src="assets/branding/logo.png" alt="Hide Secondary Name" width="512">
+</p>
+
 A small WoW Forever addon that hides secondary names on world player nameplates.
 
 It enables names-only friendly player nameplates and displays the main name using the
 ordinary overhead-name font, reaction colours and an approximate matching text size.
 Party frames, raid frames, chat, NPCs and your own name are unchanged. Existing enemy
 player nameplates also display main names; enemy plates are not enabled automatically.
+
+> **A vibe-coded experiment.** Hide Secondary Name was primarily built by describing what I wanted to an
+> AI coding assistant (Claude), then trying each step in game and giving feedback. I steered
+> the design and tested it in game, but I didn't write all of the code by hand. Bug reports
+> are very welcome.
 
 ## Install
 

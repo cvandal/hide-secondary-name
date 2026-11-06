@@ -1,5 +1,5 @@
 local ADDON_NAME, HSN = ...
-HSN.version = "0.1.0"
+HSN.version = "0.1.1"
 
 function HSN:Print(message)
     DEFAULT_CHAT_FRAME:AddMessage("|cffd4a017Hide Secondary Name:|r " .. message)

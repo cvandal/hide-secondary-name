@@ -18,7 +18,7 @@ player nameplates also display main names; enemy plates are not enabled automati
 
 ## Install
 
-Unzip `HideSecondaryName-0.1.0.zip` into your WoW Forever AddOns folder:
+Unzip `HideSecondaryName-0.1.1.zip` into your WoW Forever AddOns folder:
 
 ```
 World of Warcraft/_forever_/Interface/AddOns/HideSecondaryName/HideSecondaryName.toc

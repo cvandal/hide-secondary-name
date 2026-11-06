@@ -55,7 +55,8 @@ character until the feature is disabled, so a reload does not overwrite the base
 
 The `CompactUnitFrame_UpdateName` hook verifies ownership using
 `C_NamePlate.GetNamePlateForUnit` before changing player text to the first return from
-`UnitName`. It uses `UNIT_NAME_FONT`, size 14, a shadow, and extended
+`UnitName`. Party/raid unit tokens are excluded before that lookup because the client
+rejects them, including pet tokens. It uses `UNIT_NAME_FONT`, size 14, a shadow, and extended
 `UnitSelectionColor` reaction colours. Styles restore on removal and disabling.
 Shared name APIs, party/raid frames and chat are never modified.
 

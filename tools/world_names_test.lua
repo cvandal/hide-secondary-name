@@ -40,7 +40,11 @@ local frames = {
 local plates = {}
 for unit, frame in pairs(frames) do plates[unit] = { UnitFrame = frame } end
 C_NamePlate = {
-    GetNamePlateForUnit = function(unit) return plates[unit] end,
+    GetNamePlateForUnit = function(unit)
+        assert(not unit:match("^party") and not unit:match("^raid"),
+            "Raid<n>/Party<n> unit tokens are not allowed for this call")
+        return plates[unit]
+    end,
     GetNamePlates = function()
         local result = {}
         for _, plate in pairs(plates) do result[#result + 1] = plate end
@@ -78,6 +82,12 @@ assert(frames.friend.name.flags == "" and frames.friend.name.color[3] == 1)
 assert(frames.enemy.name.color[1] == 1 and frames.enemy.name.color[3] == 0)
 assert(frames.npc.name.text == "npc Surname" and frames.player.name.text == "player Surname")
 assert(frames.npc.name.font == "Original" and frames.player.name.font == "Original")
+for _, unit in ipairs({ "party1", "party4", "raid1", "raid40", "partypet1", "raidpet40" }) do
+    local group = Frame(unit)
+    CompactUnitFrame_UpdateName(group)
+    assert(group.name.text == unit .. " Surname", "group names stay untouched")
+    assert(group.name.font == "Original", "group styling stays untouched")
+end
 local party = Frame("friend")
 CompactUnitFrame_UpdateName(party)
 assert(party.name.text == "friend Surname", "shared party/raid unit token stays untouched")

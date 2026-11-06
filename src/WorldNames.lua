@@ -53,6 +53,9 @@ local function UpdateName(frame)
     if not Enabled() or not frame.unit then RestoreStyle(frame.name); return end
     -- CompactUnitFrame_UpdateName is shared with party/raid frames. Only accept
     -- the actual frame owned by a world nameplate, including recycled plates.
+    -- The lookup itself rejects party/raid tokens (including pet tokens), so
+    -- exclude them before calling it, rather than relying on its result.
+    if frame.unit:match("^party") or frame.unit:match("^raid") then return end
     local plate = C_NamePlate and C_NamePlate.GetNamePlateForUnit(frame.unit)
     if not plate or plate.UnitFrame ~= frame then return end
     if not UnitIsPlayer(frame.unit) or UnitIsUnit(frame.unit, "player") then

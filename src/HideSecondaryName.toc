@@ -1,0 +1,11 @@
+## Interface: 16001
+## Title: Hide Secondary Name
+## Notes: Show main names on world player nameplates in WoW Forever.
+## Author: Chris van Dal
+## Version: 0.1.0
+## X-License: GPL-3.0
+## SavedVariablesPerCharacter: HideSecondaryNameCharDB
+
+Core.lua
+WorldNames.lua
+Settings.lua
